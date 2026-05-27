@@ -118,7 +118,7 @@ When the user asks for weather in a city:
 
             while True:
                 response = llm.chat.completions.create(
-                    model="gemini-2.5-flash",
+                    model="gemini-2.5-flash",  #gemini-2.0-flash-lite
                     messages=messages,
                     temperature=0,
                     tools=tools

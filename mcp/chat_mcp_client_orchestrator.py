@@ -90,7 +90,7 @@ async def main():
             })
 
             response = llm.chat.completions.create(
-                model="gemini-2.5-flash",
+                model="gemini-2.5-flash",  #gemini-2.0-flash-lite
                 messages=messages,
                 temperature=0,
                 tools=tools
@@ -122,7 +122,7 @@ async def main():
                 })
 
                 final_response = llm.chat.completions.create(
-                    model="gemini-2.5-flash",
+                    model="gemini-2.5-flash",  #gemini-2.0-flash-lite
                     messages=messages,
                     temperature=0
                 )
