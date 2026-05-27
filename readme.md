@@ -20,7 +20,7 @@ AI Architect | RAG \& AI Agents | System Integration Specialist | Founder @ Ideo
 
 https://www.linkedin.com/in/alessandrodipiazza/
 
-ideoinnovation.com
+https://ideoinnovation.com
 
 alessandro.dipiazza@gmail.com
 
