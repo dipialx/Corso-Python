@@ -34,6 +34,7 @@ https://github.com/dipialx/Corso-Python
 
 ### Fondamenti
 
+|-|-|
 |---|---|
 |Lez1.pptx|Introduzione e installazione di python|
 |HelloWorld.py||
