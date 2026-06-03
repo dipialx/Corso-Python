@@ -51,6 +51,54 @@ plt.title("Sopravvissuti vs Non sopravvissuti")
 plt.tight_layout()
 plt.show()
 
-#Note rapide: per l'istogramma uso .dropna() perché la colonna Age ha valori mancanti. 
-#Nel grafico a torta, nel dataset Survived vale 0 (non sopravvissuto) e 1 (sopravvissuto), e value_counts() 
-#   prestituisce prima il valore più frequente (0), quindi le etichette sono ordinate di conseguenza.
+#Creare un grafico scatter che confronti: Età (Age) /Prezzo del biglietto (Fare)
+plt.scatter(df["Age"], df["Fare"])
+
+plt.title("Age vs Fare")
+plt.xlabel("Age")
+plt.ylabel("Fare")
+plt.show()
+
+dfscatter = df [["Fare", "Pclass"]]
+pd.plotting.scatter_matrix(dfscatter,figsize =(20,25),  color='k', alpha=0.3)
+plt.show()
+
+
+#sopravvisuti per classe
+survival_by_class = df.groupby(["Pclass", "Survived"]).size().unstack()
+print(survival_by_class)
+survival_by_class.plot(
+    kind="bar",
+    stacked=True
+)
+
+plt.title("Titanic Survival by Passenger Class")
+plt.show()
+
+
+
+#prima donne e bambini ?
+
+# Bambino se età < 18
+df["Category"] = "Men"
+
+df.loc[(df["Sex"] == "female"), "Category"] = "Women"
+df.loc[(df["Age"] < 18), "Category"] = "Children"
+
+survival_rate = (
+    df.groupby(["Pclass", "Category"])["Survived"]
+      .mean()
+      .unstack()
+      * 100
+)
+print("survival_rate")
+print(survival_rate)
+
+survival_rate.plot(kind="bar")
+
+plt.title("Survival Rate by Class and Category")
+plt.xlabel("Passenger Class")
+plt.ylabel("Survival Rate (%)")
+plt.ylim(0, 100)
+
+plt.show()
