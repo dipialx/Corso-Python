@@ -1,8 +1,5 @@
 from veicolo import *
 
-#stampaCoseStrane()
-
-
 class Moto(Veicolo):
     """Una motocicletta. Eredita da Veicolo e aggiunge i propri attributi."""
 
@@ -26,5 +23,5 @@ class Moto(Veicolo):
         print(f"Potenza: {self.cavalli} CV")
         print(f"ABS: {self.ha_abs}")
 
-a = Moto("Yamaha", "MT-07", 2023, "Benzina", 689, 73, "Naked", True)
-a.stampa_info()
+#a = Moto("Yamaha", "MT-07", 2023, "Benzina", 689, 73, "Naked", True)
+#a.stampa_info()

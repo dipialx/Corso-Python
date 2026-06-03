@@ -8,7 +8,6 @@ def conta_auto_elettriche(veicoli):
         if isinstance(v, Auto) and v.alimentazione == "Elettrica"
     )
 
-
 def trova_veicolo_piu_potente(veicoli):
     """Restituisce il veicolo con più cavalli (None se la lista è vuota)."""
     if not veicoli:
@@ -49,6 +48,7 @@ print("=" * 40)
 print(f"Auto elettriche: {conta_auto_elettriche(veicoli)}")
 
 piu_potente = trova_veicolo_piu_potente(veicoli)
-print(f"Veicolo più potente: {piu_potente.marchio} {piu_potente.modello} ({piu_potente.cavalli} CV)")
+if (piu_potente!=None):
+    print(f"Veicolo più potente: {piu_potente.marchio} {piu_potente.modello} ({piu_potente.cavalli} CV)")
 
 print(f"Media cavalli: {media_cavalli(veicoli):.1f} CV")
