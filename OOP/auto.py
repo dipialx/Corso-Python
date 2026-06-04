@@ -28,3 +28,4 @@ class Auto(Veicolo):
         print(f"Porte: {self.numero_porte}")
         print(f"Cambio automatico: {self.cambio_automatico}")
         print(f"Bagagliaio: {self.capacita_bagagliaio} L")
+
