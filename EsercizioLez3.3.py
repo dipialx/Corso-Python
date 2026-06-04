@@ -59,8 +59,9 @@ plt.xlabel("Age")
 plt.ylabel("Fare")
 plt.show()
 
+#scattermatrix
 dfscatter = df [["Fare", "Pclass"]]
-pd.plotting.scatter_matrix(dfscatter,figsize =(20,25),  color='k', alpha=0.3)
+pd.plotting.scatter_matrix(dfscatter,figsize =(10,10),  color='k', alpha=0.3)
 plt.show()
 
 
@@ -74,8 +75,6 @@ survival_by_class.plot(
 
 plt.title("Titanic Survival by Passenger Class")
 plt.show()
-
-
 
 #prima donne e bambini ?
 
