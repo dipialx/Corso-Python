@@ -15,6 +15,8 @@ def get_weather(latitude: float, longitude: float) -> str:
         "&current_weather=true"
     )
 
+    #https://api.open-meteo.com/v1/forecast?latitude=48.85667&longitude=2.35222&current_weather=true
+
     response = requests.get(url)
     data = response.json()
 

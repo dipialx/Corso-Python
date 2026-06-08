@@ -36,7 +36,7 @@ Question:
     })
 
     response = client.chat.completions.create(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite",
         messages=messages,
         temperature=0
     )

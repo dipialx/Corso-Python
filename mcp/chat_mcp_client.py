@@ -22,20 +22,6 @@ tools = [
     {
         "type": "function",
         "function": {
-            "name": "geocode",
-            "description": "Get latitude and longitude for a city",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "city": {"type": "string"}
-                },
-                "required": ["city"]
-            }
-        }
-    },
-    {
-        "type": "function",
-        "function": {
             "name": "get_weather",
             "description": "Get current weather from latitude and longitude",
             "parameters": {
@@ -73,18 +59,12 @@ async def open_mcp_session(stack, filename):
 async def main():
     async with AsyncExitStack() as stack:
 
-        geocoding_session = await open_mcp_session(
-            stack,
-            "geocoding_server.py"
-        )
-
         weather_session = await open_mcp_session(
             stack,
             "weather_server.py"
         )
 
         tool_sessions = {
-            "geocode": geocoding_session,
             "get_weather": weather_session
         }
 
@@ -98,9 +78,11 @@ async def main():
 You are a weather assistant.
 
 When the user asks for weather in a city:
-1. First call geocode to get latitude and longitude.
-2. Then call get_weather with those coordinates.
-3. Answer the user using the weather result.
+In case of Milan use Latitude 45.464664 N and Longitude: 9.188540 E
+In case of Paris use Latitudine: 48.85667 N and Longitudine: 2.35222 E
+
+Then call get_weather with those coordinates.
+Answer the user using the weather result.
 """
             }
         ]
@@ -118,7 +100,7 @@ When the user asks for weather in a city:
 
             while True:
                 response = llm.chat.completions.create(
-                    model="gemini-2.5-flash",  #gemini-2.0-flash-lite
+                    model="gemini-3.1-flash-lite",  #gemini-2.0-flash-lite
                     messages=messages,
                     temperature=0,
                     tools=tools

@@ -11,10 +11,13 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="gemini-2.5-flash",
+    model="gemini-3.1-flash-lite",
+    temperature=0,
+    max_tokens=1000,
     messages=[
-        {"role": "user", "content": "Explain Python pandas"}
+        {"role": "system", "content": "Sei un insegnante di python"},
+        {"role": "user", "content": "Spiegami pandas"}
     ]
 )
-
-print(response.choices[0].message.content)
+print("ROLE", response.choices[0].message.role)
+print("RISPOSTA", response.choices[0].message.content)

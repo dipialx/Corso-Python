@@ -17,6 +17,8 @@ def geocode(city: str) -> dict:
         "&limit=1"
     )
 
+    #https://nominatim.openstreetmap.org/search?q=Boston&format=json&limit=1
+
     headers = {
         "User-Agent": "mcp-demo"
     }
